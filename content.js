@@ -409,9 +409,14 @@ function applyStoredDirections() {
 function renderButton(btn, isRTL) {
   btn.dataset.rtl = isRTL ? 'true' : 'false';
   btn.classList.toggle('active', isRTL);
-  btn.innerHTML = isRTL
-    ? `<span class="rtl-icon">⇐</span><span class="rtl-label">LTR</span>`
-    : `<span class="rtl-icon">⇒</span><span class="rtl-label">RTL</span>`;
+  // Build with DOM nodes (no innerHTML) — keeps store reviewers happy and is safe.
+  const icon = document.createElement('span');
+  icon.className = 'rtl-icon';
+  icon.textContent = isRTL ? '⇐' : '⇒';
+  const label = document.createElement('span');
+  label.className = 'rtl-label';
+  label.textContent = isRTL ? 'LTR' : 'RTL';
+  btn.replaceChildren(icon, label);
   btn.title = `${uiDict.switchTo} ${isRTL ? 'LTR' : 'RTL'}`;
 }
 

@@ -31,7 +31,8 @@ function applyI18n(lang) {
 
 function populateLangSelect() {
   const sel = document.getElementById('lang-select');
-  sel.innerHTML = UI_LANGS.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
+  sel.replaceChildren();
+  UI_LANGS.forEach(l => sel.add(new Option(l.label, l.code)));
   sel.addEventListener('change', () => {
     applyI18n(sel.value);
     chrome.storage.local.set({ [UI_LANG_KEY]: currentLang });
@@ -51,9 +52,8 @@ function populateSelects() {
   const dict = I18N[currentLang] || I18N.en;
   document.querySelectorAll('select[data-field="fontFamily"]').forEach(sel => {
     const list = FONT_OPTIONS[sel.dataset.kind] || FONT_OPTIONS.text;
-    sel.innerHTML = list
-      .map(o => `<option value="${o.value}">${fontLabel(o, dict)}</option>`)
-      .join('');
+    sel.replaceChildren();
+    list.forEach(o => sel.add(new Option(fontLabel(o, dict), o.value)));
   });
 }
 

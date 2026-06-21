@@ -1,13 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Claude RTL Toolkit",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Right-to-left support and per-section typography for claude.ai — per-message RTL/LTR, fonts, line numbers. Multilingual.",
   "permissions": ["activeTab", "storage"],
   "browser_specific_settings": {
     "gecko": {
       "id": "claude-rtl-toolkit@rezabagheri",
-      "strict_min_version": "115.0",
       "data_collection_permissions": {
         "required": ["none"]
       }

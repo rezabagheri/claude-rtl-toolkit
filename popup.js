@@ -19,7 +19,8 @@ function applyI18n(lang) {
 
 function populateLangSelect() {
   const sel = $('lang-select');
-  sel.innerHTML = UI_LANGS.map((l) => `<option value="${l.code}">${l.label}</option>`).join('');
+  sel.replaceChildren();
+  UI_LANGS.forEach((l) => sel.add(new Option(l.label, l.code)));
 }
 
 // ── Talk to the content script on the active tab ──
