@@ -1,0 +1,36 @@
+name: Release
+
+# Cut a release by pushing a version tag, e.g.:
+#   git tag v1.1.0 && git push origin v1.1.0
+# This zips the extension (runtime files only) and attaches it to a GitHub Release.
+# The same zip is what you upload to the Chrome Web Store.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package extension
+        run: |
+          zip -r "claude-rtl-toolkit-${GITHUB_REF_NAME}.zip" . \
+            -x ".git/*" ".github/*" "assets/*" \
+               "README.md" "README.fa.md" "PRIVACY.md" \
+               ".gitignore" "icons/icon.svg" "*.DS_Store"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            "claude-rtl-toolkit-${GITHUB_REF_NAME}.zip" \
+            --title "${GITHUB_REF_NAME}" \
+            --generate-notes
