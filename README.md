@@ -6,10 +6,6 @@ A Chrome/Brave extension that gives [claude.ai](https://claude.ai) real right-to
 
 > Multilingual: Persian, Arabic, Hebrew, Urdu, and English — in both text auto-detection and the UI.
 
-<p align="center">
-  <img src="assets/hero.png" alt="A Claude conversation rendered right-to-left, with the RTL toggle chip and an LTR code block" width="100%">
-</p>
-
 ---
 
 ## What it is
@@ -36,6 +32,10 @@ A toolbar extension that lets you, on any Claude conversation:
 ---
 
 ## Screenshots
+
+<p align="center">
+  <img src="assets/hero.png" alt="A Claude conversation rendered right-to-left, with the RTL toggle chip and an LTR code block" width="100%">
+</p>
 
 <table>
   <tr>
