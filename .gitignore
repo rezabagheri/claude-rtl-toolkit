@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Packaging / logs
+*.zip
+*.log

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="pop">
+    <header class="pop-head">
+      <strong>Claude RTL Toolkit</strong>
+    </header>
+
+    <!-- Master on/off -->
+    <label class="row toggle-row">
+      <span data-i18n="pEnabled">Extension enabled</span>
+      <input type="checkbox" id="enabled" class="switch">
+    </label>
+
+    <!-- Line numbers (mirrors the option in settings; synced via storage) -->
+    <label class="row toggle-row">
+      <span data-i18n="lineNumbers">Show line numbers</span>
+      <input type="checkbox" id="line-numbers" class="switch">
+    </label>
+
+    <!-- Language -->
+    <label class="row lang-row">
+      <span data-i18n="langLabel">Language</span>
+      <select id="lang-select"></select>
+    </label>
+
+    <!-- Quick actions (disabled when not on a claude.ai tab) -->
+    <div class="actions">
+      <button id="all-rtl" class="btn" data-i18n="pAllRtl">Set all → RTL</button>
+      <button id="all-ltr" class="btn" data-i18n="pAllLtr">Set all → LTR</button>
+    </div>
+
+    <!-- Health line: how many messages we detect on the page -->
+    <p class="health" id="health"></p>
+
+    <footer class="pop-foot">
+      <button id="settings" class="btn ghost" data-i18n="pSettings">Open settings ⚙</button>
+    </footer>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

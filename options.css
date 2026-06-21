@@ -1,0 +1,239 @@
+/* Claude RTL Toolkit - options.css */
+
+/* Vazirmatn is bundled; on an extension page a relative url() resolves correctly. */
+@font-face {
+  font-family: 'Vazirmatn';
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Vazirmatn-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Vazirmatn-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Estedad';
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Estedad-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Rubik-Regular.woff2') format('woff2');
+  unicode-range: U+0590-05FF, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Rubik-Latin-Regular.woff2') format('woff2');
+  unicode-range: U+0000-024F, U+2000-206F;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/JetBrainsMono-Bold.woff2') format('woff2');
+}
+
+:root {
+  --bg: #1a1a1f;
+  --card: #24242b;
+  --border: #36363f;
+  --text: #e7e7ea;
+  --muted: #9ca3af;
+  --accent: #8b5cf6;
+  --accent-strong: #7c3aed;
+}
+
+/* Auto light theme — follows the OS/browser setting, no toggle needed. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f6f8;
+    --card: #ffffff;
+    --border: #e2e2e6;
+    --text: #1a1a1f;
+    --muted: #6b7280;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Vazirmatn', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+.head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.lang select {
+  width: auto;
+  padding: 6px 10px;
+}
+
+.head h1 {
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+.sub {
+  color: var(--muted);
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+
+.group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.group h2 {
+  font-size: 16px;
+  margin: 0 0 14px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 520px) {
+  .controls { grid-template-columns: 1fr; }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+label b { color: var(--text); }
+
+label.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+label.check input { accent-color: var(--accent); cursor: pointer; }
+label.check span { color: var(--text); }
+
+select {
+  appearance: none;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+input[type="range"] {
+  accent-color: var(--accent);
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.preview {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: var(--bg);
+  min-height: 48px;
+  /* font-family/size are applied live via inline style from options.js */
+}
+
+.preview.code {
+  white-space: pre;
+  overflow-x: auto;
+  font-variant-ligatures: contextual common-ligatures;
+  font-feature-settings: 'calt' 1, 'liga' 1;
+  display: flex;
+  gap: 12px;
+}
+
+.lineno-gutter {
+  flex: 0 0 auto;
+  white-space: pre;
+  text-align: right;
+  user-select: none;
+  color: var(--muted);
+  border-right: 1px solid var(--border);
+  padding-right: 10px;
+}
+.lineno-gutter[hidden] { display: none; }
+
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--muted);
+}
+.btn.ghost:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.status {
+  font-size: 13px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.status.show { opacity: 1; }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="title">Claude RTL Toolkit — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <div class="head-row">
+        <h1 data-i18n="title">Claude RTL Toolkit — Settings</h1>
+        <label class="lang">
+          <span data-i18n="langLabel">Language</span>
+          <select id="lang-select"></select>
+        </label>
+      </div>
+      <p class="sub" data-i18n="subtitle">Set the font and text size for each section independently.</p>
+    </header>
+
+    <!-- Each .group is one configurable scope: user / claude / code -->
+    <section class="group" data-scope="user">
+      <h2 data-i18n="userGroup">User messages</h2>
+      <div class="controls">
+        <label>
+          <span data-i18n="font">Font</span>
+          <select data-field="fontFamily" data-kind="text"></select>
+        </label>
+        <label>
+          <span><span data-i18n="size">Size</span>: <b class="size-val">16</b>px</span>
+          <input type="range" min="11" max="28" step="1" data-field="fontSize">
+        </label>
+        <label>
+          <span><span data-i18n="lineHeight">Line height</span>: <b class="lh-val">1.7</b></span>
+          <input type="range" min="1.2" max="2.4" step="0.05" data-field="lineHeight">
+        </label>
+      </div>
+      <div class="preview" data-preview data-i18n="previewUser">Hello, this is a sample sentence. Sample 123.</div>
+    </section>
+
+    <section class="group" data-scope="claude">
+      <h2 data-i18n="claudeGroup">Claude responses</h2>
+      <div class="controls">
+        <label>
+          <span data-i18n="font">Font</span>
+          <select data-field="fontFamily" data-kind="text"></select>
+        </label>
+        <label>
+          <span><span data-i18n="size">Size</span>: <b class="size-val">16</b>px</span>
+          <input type="range" min="11" max="28" step="1" data-field="fontSize">
+        </label>
+        <label>
+          <span><span data-i18n="lineHeight">Line height</span>: <b class="lh-val">1.7</b></span>
+          <input type="range" min="1.2" max="2.4" step="0.05" data-field="lineHeight">
+        </label>
+      </div>
+      <div class="preview" data-preview data-i18n="previewClaude">Claude's answer appears here. Sample 123.</div>
+    </section>
+
+    <section class="group" data-scope="composer">
+      <h2 data-i18n="composerGroup">Message input</h2>
+      <div class="controls">
+        <label>
+          <span data-i18n="font">Font</span>
+          <select data-field="fontFamily" data-kind="text"></select>
+        </label>
+        <label>
+          <span><span data-i18n="size">Size</span>: <b class="size-val">16</b>px</span>
+          <input type="range" min="11" max="28" step="1" data-field="fontSize">
+        </label>
+        <label>
+          <span><span data-i18n="lineHeight">Line height</span>: <b class="lh-val">1.7</b></span>
+          <input type="range" min="1.2" max="2.4" step="0.05" data-field="lineHeight">
+        </label>
+      </div>
+      <div class="preview" data-preview data-i18n="previewComposer">Type your message here. Sample 123.</div>
+    </section>
+
+    <section class="group" data-scope="code">
+      <h2 data-i18n="codeGroup">Code (independent)</h2>
+      <div class="controls">
+        <label>
+          <span data-i18n="font">Font</span>
+          <select data-field="fontFamily" data-kind="code"></select>
+        </label>
+        <label>
+          <span><span data-i18n="size">Size</span>: <b class="size-val">14</b>px</span>
+          <input type="range" min="10" max="22" step="1" data-field="fontSize">
+        </label>
+        <label class="check">
+          <input type="checkbox" data-field="lineNumbers">
+          <span data-i18n="lineNumbers">Show line numbers</span>
+        </label>
+      </div>
+      <div class="preview code" data-preview dir="ltr"><span class="lineno-gutter" hidden></span><span class="code-text">const greet = (name) =&gt; {
+  console.log("hi " + name);
+};</span></div>
+    </section>
+
+    <footer class="foot">
+      <button id="reset" class="btn ghost" data-i18n="reset">Reset to defaults</button>
+      <button id="export" class="btn ghost" data-i18n="exportBtn">Export</button>
+      <button id="import" class="btn ghost" data-i18n="importBtn">Import</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+      <span id="status" class="status"></span>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

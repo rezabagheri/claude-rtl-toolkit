@@ -1,0 +1,111 @@
+/* Claude RTL Toolkit - styles.css */
+
+/* ── Composer (message input): auto-direction per line ──
+   plaintext makes each paragraph follow its own content: Persian/Arabic/Hebrew → RTL,
+   English → LTR. text-align: start keeps the caret/text on the reading-start edge.
+   Gated by html.rtl-ext-enabled so the popup's off-switch fully reverts it. */
+html.rtl-ext-enabled div[contenteditable="true"],
+html.rtl-ext-enabled div[contenteditable="true"] p {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+
+/* ── Header bar above each message (holds the single toggle chip) ── */
+.rtl-header-bar {
+  display: flex;
+  justify-content: flex-end; /* chip sits at the top-right, above the text */
+  align-items: center;
+  margin-bottom: 6px;
+  opacity: 0.6; /* subtle by default, full on hover */
+  transition: opacity 0.15s ease;
+}
+
+[data-rtl-processed]:hover .rtl-header-bar,
+[data-message-id]:hover .rtl-header-bar {
+  opacity: 1;
+}
+
+
+/* ── Toggle chip ── */
+.rtl-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  font-size: 11px;
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  line-height: 1.4;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rtl-toggle-btn:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.rtl-toggle-btn.active {
+  background: rgba(139, 92, 246, 0.15);
+  color: #7c3aed;
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.rtl-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.rtl-label {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+
+/* ── Optional code line-number gutter ── */
+pre.rtl-has-lineno {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 12px;
+}
+pre.rtl-has-lineno > code {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+}
+.rtl-lineno-gutter {
+  flex: 0 0 auto;
+  white-space: pre;
+  text-align: right;
+  user-select: none;
+  -webkit-user-select: none;
+  color: #6b7280;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  padding-right: 10px;
+  font-variant-numeric: tabular-nums;
+  line-height: inherit;
+}
+
+
+/* Font family/size for prose vs code are injected dynamically from user settings
+   (see content.js → buildSettingsCss). Only direction rules live here. */
+
+/* ── Code blocks: ALWAYS strict LTR ──
+   `isolate` (not `plaintext`) forces each line's base direction to LTR, so a line
+   that starts with a Persian/Arabic/Hebrew comment no longer flips the whole line. */
+html.rtl-ext-enabled .message-content-wrapper pre,
+html.rtl-ext-enabled .message-content-wrapper code,
+html.rtl-ext-enabled .message-content-wrapper [class*="code"] {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+}
