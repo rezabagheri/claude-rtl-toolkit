@@ -14,11 +14,6 @@
   <img src="assets/hero.png" alt="یک گفتگوی Claude به‌صورت راست‌به‌چپ، با چیپ toggle و بلوک کدِ LTR" width="100%">
 </p>
 
-<p align="center">
-  <img src="assets/settings.png" alt="صفحه‌ی تنظیمات" width="49%">
-  <img src="assets/popup.png" alt="popup نوار ابزار" width="32%">
-</p>
-
 ---
 
 ## این چیه؟ (What)
@@ -41,6 +36,21 @@
 
 **رابط**
 - 🌍 رابط ۵ زبانه · 🎛️ popup (روشن/خاموش، همه‌RTL/LTR، شماره خط، زبان، نشانگر سلامت) · 📤 export/import · 🎨 تم خودکار.
+
+---
+
+## نماها (Screenshots)
+
+<table>
+  <tr>
+    <td align="center"><img src="assets/settings.png" alt="صفحه‌ی تنظیمات" width="300"></td>
+    <td align="center"><img src="assets/popup.png" alt="popup در ۵ زبان" width="210"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>تنظیمات — تایپوگرافی مستقل برای هر بخش</sub></td>
+    <td align="center"><sub>popup — کنترل سریع، ۵ زبان</sub></td>
+  </tr>
+</table>
 
 ---
 

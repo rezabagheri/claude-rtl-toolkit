@@ -10,11 +10,6 @@ A Chrome/Brave extension that gives [claude.ai](https://claude.ai) real right-to
   <img src="assets/hero.png" alt="A Claude conversation rendered right-to-left, with the RTL toggle chip and an LTR code block" width="100%">
 </p>
 
-<p align="center">
-  <img src="assets/settings.png" alt="Settings page" width="49%">
-  <img src="assets/popup.png" alt="Toolbar popup" width="32%">
-</p>
-
 ---
 
 ## What it is
@@ -37,6 +32,21 @@ A toolbar extension that lets you, on any Claude conversation:
 
 **Interface**
 - 🌍 5-language UI · 🎛️ popup (on/off, set-all, line numbers, language, health) · 📤 export/import · 🎨 auto light/dark.
+
+---
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><img src="assets/settings.png" alt="Settings page" width="300"></td>
+    <td align="center"><img src="assets/popup.png" alt="Popup in 5 languages" width="210"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Settings — independent typography per section</sub></td>
+    <td align="center"><sub>Popup — quick controls, 5 languages</sub></td>
+  </tr>
+</table>
 
 ---
 
