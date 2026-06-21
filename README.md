@@ -2,7 +2,7 @@
 
 # Claude RTL Toolkit
 
-A Chrome/Brave extension that gives [claude.ai](https://claude.ai) real right-to-left (RTL) support and per-section typography control.
+A Chrome / Brave / Firefox extension that gives [claude.ai](https://claude.ai) real right-to-left (RTL) support and per-section typography control.
 
 > Multilingual: Persian, Arabic, Hebrew, Urdu, and English — in both text auto-detection and the UI.
 
@@ -66,15 +66,20 @@ Claude is great at multilingual conversations — but the **interface** wasn't b
 
 ## How to use it
 
-### Install
+First, clone this repo (or download it as a ZIP and unzip).
 
-1. Clone this repo (or download it as a ZIP and unzip).
-2. Open `chrome://extensions` (or `brave://extensions`).
-3. Enable **Developer mode** (top corner).
-4. Click **Load unpacked** and select the cloned `claude-rtl-toolkit` folder.
-5. Head to `claude.ai`.
+**Chrome / Brave**
+1. Open `chrome://extensions` (or `brave://extensions`).
+2. Enable **Developer mode** (top corner).
+3. Click **Load unpacked** and select the `claude-rtl-toolkit` folder.
 
-> After editing any file, click **🔄 reload** on the extension card and refresh the tab.
+**Firefox**
+1. Open `about:debugging#/runtime/this-firefox`.
+2. Click **Load Temporary Add-on…** and pick the `manifest.json` inside the folder.
+
+Then head to `claude.ai`.
+
+> One manifest works in both browsers. Temporary Firefox add-ons are removed on restart — for a permanent install, grab it from the Chrome Web Store / Firefox Add-ons once published. After editing any file, reload the extension and refresh the tab.
 
 ### Everyday use
 

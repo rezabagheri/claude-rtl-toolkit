@@ -6,7 +6,7 @@
 
 # Claude RTL Toolkit
 
-افزونه‌ی Chrome/Brave که به [claude.ai](https://claude.ai) پشتیبانی واقعی از راست‌به‌چپ (RTL) و کنترل تایپوگرافی برای هر بخش می‌دهد.
+افزونه‌ی Chrome / Brave / Firefox که به [claude.ai](https://claude.ai) پشتیبانی واقعی از راست‌به‌چپ (RTL) و کنترل تایپوگرافی برای هر بخش می‌دهد.
 
 > چندزبانه: فارسی، عربی، عبری، اردو و انگلیسی — هم در تشخیص خودکار متن، هم در رابط کاربری.
 
@@ -70,15 +70,20 @@ Claude در گفتگوهای چندزبانه عالیه — اما **رابطش
 
 ## چطور کار کنم؟ (How)
 
-### نصب
+اول این repo را clone کن (یا ZIP دانلود و extract کن).
 
-1. این repo را clone کن (یا ZIP دانلود و extract کن).
-2. آدرس `chrome://extensions` (یا `brave://extensions`) را باز کن.
-3. **Developer mode** را از گوشه‌ی بالا فعال کن.
-4. روی **Load unpacked** کلیک کن و پوشه‌ی `claude-rtl-toolkit` را انتخاب کن.
-5. به `claude.ai` برو.
+**Chrome / Brave**
+1. آدرس `chrome://extensions` (یا `brave://extensions`) را باز کن.
+2. **Developer mode** را از گوشه‌ی بالا فعال کن.
+3. روی **Load unpacked** کلیک کن و پوشه‌ی `claude-rtl-toolkit` را انتخاب کن.
 
-> پس از هر بار ویرایش فایل‌ها، روی کارت افزونه **🔄 reload** را بزن و تب را رفرش کن.
+**Firefox**
+1. آدرس `about:debugging#/runtime/this-firefox` را باز کن.
+2. روی **Load Temporary Add-on…** بزن و فایل `manifest.json` داخل پوشه را انتخاب کن.
+
+بعد به `claude.ai` برو.
+
+> یک manifest در هر دو مرورگر کار می‌کند. افزونه‌ی موقتِ Firefox با ری‌استارت پاک می‌شود — برای نصب دائمی، بعد از انتشار از فروشگاه نصب کن. پس از هر ویرایش، افزونه را reload و تب را رفرش کن.
 
 ### استفاده‌ی روزمره
 
