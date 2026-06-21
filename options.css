@@ -237,3 +237,19 @@ input[type="range"] {
   transition: opacity 0.2s ease;
 }
 .status.show { opacity: 1; }
+
+.about {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+.about a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.about a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}

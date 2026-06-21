@@ -184,7 +184,7 @@ function bindEvents() {
     const blob = new Blob([JSON.stringify(collect(), null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'claude-rtl-toggle-settings.json';
+    a.download = 'claude-rtl-toolkit-settings.json';
     a.click();
     URL.revokeObjectURL(a.href);
   });
@@ -214,6 +214,8 @@ function bindEvents() {
 }
 
 // Init (applyI18n populates the font selects once the language is known)
+document.getElementById('version').textContent =
+  `Claude RTL Toolkit v${chrome.runtime.getManifest().version}`;
 populateLangSelect();
 bindEvents();
 chrome.storage.local.get([SETTINGS_KEY, UI_LANG_KEY], (data) => {

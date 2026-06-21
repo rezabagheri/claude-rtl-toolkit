@@ -10,6 +10,15 @@
 
 > چندزبانه: فارسی، عربی، عبری، اردو و انگلیسی — هم در تشخیص خودکار متن، هم در رابط کاربری.
 
+<p align="center">
+  <img src="assets/hero.png" alt="یک گفتگوی Claude به‌صورت راست‌به‌چپ، با چیپ toggle و بلوک کدِ LTR" width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/settings.png" alt="صفحه‌ی تنظیمات" width="49%">
+  <img src="assets/popup.png" alt="popup نوار ابزار" width="32%">
+</p>
+
 ---
 
 ## این چیه؟ (What)

@@ -39,7 +39,12 @@ function setActionsEnabled(on) {
   $('all-ltr').disabled = !on;
 }
 
+// Remember the last status so we can re-render it (in the new language) when the
+// language changes — the health text isn't a [data-i18n] node, so applyI18n alone
+// wouldn't update it.
+let lastCount;
 function showHealth(count) {
+  lastCount = count;
   const el = $('health');
   if (count == null) {
     el.textContent = dict.pNoPage;
@@ -80,6 +85,7 @@ $('enabled').addEventListener('change', (e) => {
 // Language — write the same key the options page uses; content + options stay in sync.
 $('lang-select').addEventListener('change', (e) => {
   applyI18n(e.target.value);
+  if (lastCount !== undefined) showHealth(lastCount); // re-translate the status line
   chrome.storage.local.set({ [UI_LANG_KEY]: e.target.value });
 });
 
