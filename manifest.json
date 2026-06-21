@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Claude RTL Toolkit",
   "version": "1.1.0",
-  "description": "Add RTL/LTR toggle button to each Claude message, with per-role font customization",
+  "description": "Right-to-left support and per-section typography for claude.ai — per-message RTL/LTR, fonts, line numbers. Multilingual.",
   "permissions": ["activeTab", "storage"],
   "action": {
     "default_popup": "popup.html",
