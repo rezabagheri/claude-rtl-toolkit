@@ -109,3 +109,12 @@ html.rtl-ext-enabled .message-content-wrapper [class*="code"] {
   text-align: left !important;
   unicode-bidi: isolate !important;
 }
+
+/* ── Math (KaTeX): ALWAYS LTR ──
+   Math notation reads left-to-right even inside RTL prose. KaTeX sets direction:ltr
+   itself, but we enforce it so we don't depend on Claude's KaTeX version. No
+   text-align override here, so block math (.katex-display) keeps its own centering. */
+html.rtl-ext-enabled .message-content-wrapper :is(.katex, .katex-display, [class*="katex"]) {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}

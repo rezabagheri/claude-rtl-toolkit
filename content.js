@@ -350,7 +350,27 @@ function applyDirection(container, isRTL) {
 
   container.style.direction = isRTL ? 'rtl' : '';
 
-  // Always keep code blocks LTR
+  // Blockquotes use a physical left border/padding which doesn't follow `direction`.
+  // In RTL, move the accent bar to the reading-start (right) side so it matches the text.
+  container.querySelectorAll('blockquote').forEach(bq => {
+    if (isRTL) {
+      const cs = getComputedStyle(bq);
+      if (cs.borderLeftWidth !== '0px') { // not yet flipped
+        bq.style.borderRight = `${cs.borderLeftWidth} ${cs.borderLeftStyle} ${cs.borderLeftColor}`;
+        bq.style.borderLeftWidth = '0px';
+        bq.style.paddingRight = cs.paddingLeft;
+        bq.style.paddingLeft = '0px';
+      }
+    } else {
+      bq.style.borderRight = '';
+      bq.style.borderLeftWidth = '';
+      bq.style.paddingRight = '';
+      bq.style.paddingLeft = '';
+    }
+  });
+
+  // Always keep code blocks LTR. Math (KaTeX) is also forced LTR via styles.css —
+  // math notation reads left-to-right even inside RTL text.
   container.querySelectorAll('pre, code, .code-block').forEach(el => {
     el.style.direction = 'ltr';
     el.style.textAlign = 'left';
