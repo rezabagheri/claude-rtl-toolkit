@@ -6,6 +6,11 @@ A Chrome / Brave / Firefox extension that gives [claude.ai](https://claude.ai) r
 
 > Multilingual: Persian, Arabic, Hebrew, Urdu, and English — in both text auto-detection and the UI.
 
+[![Firefox Add-on](https://img.shields.io/amo/v/claude-rtl-toolkit?label=Firefox%20Add-on&logo=firefoxbrowser&color=7c3aed)](https://addons.mozilla.org/addon/claude-rtl-toolkit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-7c3aed)](LICENSE)
+
+**[▸ Install for Firefox](https://addons.mozilla.org/addon/claude-rtl-toolkit/)** — one click. Chrome/Brave: load unpacked ([below](#install)).
+
 ---
 
 ## What it is
@@ -66,20 +71,22 @@ Claude is great at multilingual conversations — but the **interface** wasn't b
 
 ## How to use it
 
-First, clone this repo (or download it as a ZIP and unzip).
+**Firefox — one click:** install from [Firefox Add-ons](https://addons.mozilla.org/addon/claude-rtl-toolkit/). Then head to `claude.ai`.
+
+### From source (Chrome / Brave, or Firefox dev)
+
+Clone this repo (or download it as a ZIP and unzip).
 
 **Chrome / Brave**
 1. Open `chrome://extensions` (or `brave://extensions`).
 2. Enable **Developer mode** (top corner).
 3. Click **Load unpacked** and select the `claude-rtl-toolkit` folder.
 
-**Firefox**
+**Firefox (temporary, for development)**
 1. Open `about:debugging#/runtime/this-firefox`.
 2. Click **Load Temporary Add-on…** and pick the `manifest.json` inside the folder.
 
-Then head to `claude.ai`.
-
-> One manifest works in both browsers. Temporary Firefox add-ons are removed on restart — for a permanent install, grab it from the Chrome Web Store / Firefox Add-ons once published. After editing any file, reload the extension and refresh the tab.
+> One manifest works in both browsers. After editing any file, reload the extension and refresh the tab.
 
 ### Everyday use
 

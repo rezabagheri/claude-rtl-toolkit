@@ -10,6 +10,11 @@
 
 > چندزبانه: فارسی، عربی، عبری، اردو و انگلیسی — هم در تشخیص خودکار متن، هم در رابط کاربری.
 
+[![Firefox Add-on](https://img.shields.io/amo/v/claude-rtl-toolkit?label=Firefox%20Add-on&logo=firefoxbrowser&color=7c3aed)](https://addons.mozilla.org/addon/claude-rtl-toolkit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-7c3aed)](LICENSE)
+
+**[▸ نصب برای Firefox](https://addons.mozilla.org/addon/claude-rtl-toolkit/)** — با یک کلیک. (Chrome/Brave: load unpacked، پایین‌تر)
+
 ---
 
 ## این چیه؟ (What)
@@ -70,20 +75,22 @@ Claude در گفتگوهای چندزبانه عالیه — اما **رابطش
 
 ## چطور کار کنم؟ (How)
 
-اول این repo را clone کن (یا ZIP دانلود و extract کن).
+**Firefox — با یک کلیک:** از [Firefox Add-ons](https://addons.mozilla.org/addon/claude-rtl-toolkit/) نصب کن. بعد به `claude.ai` برو.
+
+### از روی سورس (Chrome / Brave یا Firefox توسعه)
+
+این repo را clone کن (یا ZIP دانلود و extract کن).
 
 **Chrome / Brave**
 1. آدرس `chrome://extensions` (یا `brave://extensions`) را باز کن.
 2. **Developer mode** را از گوشه‌ی بالا فعال کن.
 3. روی **Load unpacked** کلیک کن و پوشه‌ی `claude-rtl-toolkit` را انتخاب کن.
 
-**Firefox**
+**Firefox (موقت، برای توسعه)**
 1. آدرس `about:debugging#/runtime/this-firefox` را باز کن.
 2. روی **Load Temporary Add-on…** بزن و فایل `manifest.json` داخل پوشه را انتخاب کن.
 
-بعد به `claude.ai` برو.
-
-> یک manifest در هر دو مرورگر کار می‌کند. افزونه‌ی موقتِ Firefox با ری‌استارت پاک می‌شود — برای نصب دائمی، بعد از انتشار از فروشگاه نصب کن. پس از هر ویرایش، افزونه را reload و تب را رفرش کن.
+> یک manifest در هر دو مرورگر کار می‌کند. پس از هر ویرایش، افزونه را reload و تب را رفرش کن.
 
 ### استفاده‌ی روزمره
 
